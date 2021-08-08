@@ -103,9 +103,12 @@ console.log(areYouInHere(arrayOfWords1))
 
 //pseudo
 //make my function going with fullHouseCheck
-// going to use iteration for sure im thinking a forloop
 // maybe sort the arr and compare the indexes of values next to each other 
 // set up conditionals with my comparisons
+// got a little confused on handling the logic behind the full house trips being either the first set or second set of pairs in my array on my refactor realized I tottallu over thought this lol 
+// if my zero index and second index = eachother and 3 and 4= each other true else false 
+// if my zero and 1 equal each other and 2 and 4 equal eachother true else false
+// working code nice! very interesting challenges this week definitely did my solid share of overthhinking for these 😅
 
 // a) Create a test with an expect statement using the variable provided.
 var hand1 = [5, 5, 5, 3, 3]
@@ -115,10 +118,24 @@ var hand2 = [5, 5, 3, 3, 4]
 var hand3 = [5, 5, 5, 5, 4]
 // Expected output: false
 
+describe("The fullHpuseCheck function.",()=>{
+    test("takes an array and returns a boolean about if the array is a full house or not",() => {
+        expect(fullHouseCheck(hand1)).toEqual(true)
+        expect(fullHouseCheck(hand2)).toEqual(false)
+        expect(fullHouseCheck(hand3)).toEqual(false)
+    })
+})
 
 
 // b) Create the function that makes the test pass
 
-// const fullHouseCheck = (arr) => {
-// let 
-// }
+const fullHouseCheck = (arr) => {
+    let sortedArr = arr.sort((a, b) => a - b)
+    if (sortedArr[0] == sortedArr[2] && sortedArr[3] == sortedArr[4]||
+        sortedArr[0] == sortedArr[1] && sortedArr[2] == sortedArr[4] ){
+            return true
+    } else {
+        return false
+    }
+}
+console.log(fullHouseCheck([1,1,2,2,2]))
