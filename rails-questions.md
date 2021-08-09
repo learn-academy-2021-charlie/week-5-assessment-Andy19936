@@ -4,7 +4,7 @@
 SQL is a domain specific language used for dealing with relational databases
 
 2. What the PostgreSQL query that would return all the content in a particular table?
- select *
+ SELECT *
  from table
 
 3. What is the command to create a new Rails application with a PostgreSQL database?
@@ -20,7 +20,7 @@ a migration is a way to update your schema you can use them to add, remove, upda
 $ rails g migration name_of_change
 
 7. What is the naming convention for generating a Rails model? What is the naming convention for the table that is generated with this command?
-model name convention is CamelCase, the name convention for tables that are generated is snake_case
+model name convention is PascalCasw, the name convention for tables that are generated is snake_case
 
 8. What is the schema file in a Rails application? Can you modify the schema directly? Why or why not?
 The schema file in your rails app is a current representation of the contents of your app from the latest ran migration we cannot update the schema directly because rails does this for you and is very particular with how this data is supposed to be input.
